@@ -4,10 +4,12 @@ let app = express();
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/"));
 
-let index = require("./src/index");
-let connections = require("./src/connections");
+app.get("/", function (req, res) {
+  res.render("index");
+});
 
-app.use("/", index);
-app.use("/connections", connections);
+app.get("/results", function (req, res) {
+  res.render("results");
+});
 
 app.listen(8084);
