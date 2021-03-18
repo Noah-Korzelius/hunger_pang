@@ -1,6 +1,6 @@
 .searchIndex {
 	text-align: center;
-	padding-top: 150px;
+	padding-top: 100px;
 }
 
 .searchResults {
@@ -8,7 +8,12 @@
 	padding-bottom: 20px;
 }
 
-h1{
+h1 {
 	text-align: center;
-	
+	font-size: 60px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+}
+
+label {
+	font-size: 40px;
 }
