@@ -39,8 +39,10 @@ const req = http.request(options, function (res) {
 
 	res.on("end", function () {
 		const body = Buffer.concat(chunks);
-		console.log(body.toString());
-    fs.appendFileSync(filename, body.toString());
+		//console.log(body.toString());
+    //fs.appendFileSync(filename, body.toString());
+    let obj = JSON.parse(body.toString());
+    console.log(obj);
 	});
 });
 
