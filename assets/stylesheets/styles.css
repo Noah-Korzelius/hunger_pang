@@ -1,6 +1,16 @@
-.searchIndex {
+.addressBar {
 	text-align: center;
-	padding-top: 100px;
+	padding-top: 50px;
+}
+
+.foodBar {
+	padding-left: 1075px;
+	padding-top: 15px;
+}
+
+.dabutton {
+	text-align: center;
+	padding-top: 40px;
 }
 
 .searchResults {
@@ -14,13 +24,16 @@
 
 .footer{
 	color: red;
+	text-align: center;
+	padding-top: 200px;
 }
 
 h1 {
 	text-align: center;
 	font-size: 60px;
 	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;	
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	padding-top: 100px;
 }
 
 label {
