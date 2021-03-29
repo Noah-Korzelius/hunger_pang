@@ -8,6 +8,14 @@
 	padding-bottom: 20px;
 }
 
+.header{
+	color:red;
+}
+
+.footer{
+	color: red;
+}
+
 h1 {
 	text-align: center;
 	font-size: 60px;
