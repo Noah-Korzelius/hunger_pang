@@ -45,6 +45,13 @@ h1 {
 	padding-top: 100px;
 }
 
+h2 {
+	text-align: center;
+	font-size: 60px;
+	color: darkgreen;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 label {
 	font-size: 40px;
 	color: darkgreen;
