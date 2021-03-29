@@ -5,12 +5,15 @@
 
 .foodBar {
 	text-align: center;
-	padding-top: 15px;
+	padding-top: 25px;
+	padding-bottom: 50px;
 }
 
 .dabutton {
 	text-align: center;
-	padding-top: 40px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: darkgreen;
 }
 
 .searchResults {
@@ -25,7 +28,7 @@
 .footer{
 	color: red;
 	text-align: center;
-	padding-top: 200px;
+	padding-top: 150px;
 }
 
 h1 {
