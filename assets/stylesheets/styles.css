@@ -22,9 +22,13 @@
 }
 
 .header{
-	color: darkgreen;
+	color: gold;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 30px;
+	font-size: 35px;
+	padding-left: 30px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	background-color: darkgreen;
 }
 
 .footer{
