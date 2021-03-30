@@ -60,6 +60,21 @@ h2 {
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+h3 { 
+	text-align: center;
+	color: darkgreen;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 60px;
+	text-decoration: underline;
+}
+
+.fluffText {
+	margin-left: 23%;
+	color: darkgreen;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	font-size: 20px;
+}
+
 label {
 	font-size: 40px;
 	color: darkgreen;
