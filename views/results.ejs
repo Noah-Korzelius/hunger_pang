@@ -13,78 +13,39 @@
   <body>
     <%- include('partials/header.ejs'); %>
     <main>
-		<h2><p>Results Page</p></h2>
-		<div class="searchResults">
-		<form action="/results">
-			<label for="streetAddress">Street Address:</label>
-			<input type="text" id="streetAddress" name="streetAddress" /> <br /> <br />
-			<label for="searchTag">Food:</label>
-			<input type="text" id="searchTag" name="searchTag"><br><br>
-			<div class="dabutton">
-				<input type="button" onclick="search()" value="Food Search">
-			</div>
-		</form>
-		</div>
-		<table style="width:100%">
-		<tr>
-			<th>Restaurant</th>
-			<th>Price</th>
-			<th>Rating</th>
-			<th>Distance</th>
-			<th>Navigation</th>
-		</tr>
-		</table>
-		<p id="results"></p> 
-	</main>
+      <h2><p>Results Page</p></h2>
+      <div class="searchResults">
+        <form action="/results">
+          <label for="zipCode">Zip Code:</label>
+          <input type="text" id="zipCode" name="zipCode" /> <br />
+          <br />
+          <label for="searchTag">Food:</label>
+          <input type="text" id="searchTag" name="searchTag" /><br /><br />
+          <div class="dabutton">
+            <input type="submit" value="Food Search" />
+          </div>
+        </form>
+      </div>
+      <table style="width: 100%">
+        <tr>
+          <th>Restaurant</th>
+          <th>Price</th>
+          <th>Phone Number</th>
+          <th>Website</th>
+          <th>Navigation</th>
+        </tr>
+        <% for(var x=0; x< len; x++){ %>
+        <tr>
+          <td><%= allRestaurants[x].restaurant_name %></td>
+          <td><%= allRestaurants[x].price_range %></td>
+          <td><%= allRestaurants[x].restaurant_phone %></td>
+          <td><%= allRestaurants[x].restaurant_website %></td>
+          <td></td>
+        </tr>
+        <% } %>
+      </table>
+      <p id="results"></p>
+    </main>
     <%- include('partials/footer.ejs'); %>
   </body>
-  <script>
-	  function search(){
-		//use js fetch since node doesn't work here
-		//TODO: implement dynamic queries
-		fetch("https://documenu.p.rapidapi.com/restaurants/zip_code/28001?fullmenu=true", {
-				"method": "GET",
-				"headers": {
-					"x-api-key": "20f9d73a0a0f49f6ab39f1377d6728ef",
-					"x-rapidapi-key": "3f69dea4f9msh991cd681eec7d1bp10d0b3jsnaa45c3604b2a",
-					"x-rapidapi-host": "documenu.p.rapidapi.com"
-				}
-			})
-		.then(response => {
-			//take the response data (text) and do stuff with it
-			response.text().then(text => {
-				//turn it into an object
-				let obj = JSON.parse(text);
-				console.log(obj.data);
-				console.log(obj.data[0].restaurant_name);
-				let newTable = document.createElement("table");
-
-				let columns = ["restaurant_name", "price_range", "Rating", "Distance", "Navigation"];
-
-				//create a table and populate it with obj data
-
-				for (let x = 0; x < obj.data; x++) {
-
-					tr = table.insertRow(-1);
-
-					for (let y = 0; y < columns.length; y++) {
-
-					let tabCell = tr.insertCell(-1);
-					tabCell.innerHTML = obj.data[0].restaurant_name;
-					}
-				}
-
-				//put the new table into the "results" id
-				
-				let temp = document.getElementById("results");
-				temp.innerHTML = "";
-				temp.appendChild(newTable);
-			});
-			
-		})
-		.catch(err => {
-			console.error(err);
-		});
-		}
-  </script>
 </html>
