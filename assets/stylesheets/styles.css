@@ -32,7 +32,7 @@
 }
 
 .footer{
-	color: red;
+	color: darkgreen;
 	text-align: center;
 	padding-top: 150px;
 }
@@ -43,6 +43,13 @@ h1 {
 	color: darkgreen;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 	padding-top: 100px;
+}
+
+h2 {
+	text-align: center;
+	font-size: 60px;
+	color: darkgreen;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 label {

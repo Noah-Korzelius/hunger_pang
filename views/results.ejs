@@ -13,14 +13,16 @@
   <body>
     <%- include('partials/header.ejs'); %>
     <main>
-		<h1><p>Results Page</p></h1>
+		<h2><p>Results Page</p></h2>
 		<div class="searchResults">
-		<form action="results.html">
+		<form action="/results">
 			<label for="streetAddress">Street Address:</label>
 			<input type="text" id="streetAddress" name="streetAddress" /> <br /> <br />
 			<label for="searchTag">Food:</label>
 			<input type="text" id="searchTag" name="searchTag"><br><br>
-			<input type="submit" value="Food Search">
+			<div class="dabutton">
+				<input type="submit" value="Food Search">
+			</div>
 		</form>
 		</div>
 		<table style="width:100%">
