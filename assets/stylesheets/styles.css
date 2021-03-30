@@ -95,3 +95,7 @@ body {
 tr {
 	color: darkgreen;
 }
+
+td {
+text-align: center;
+}
