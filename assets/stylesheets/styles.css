@@ -77,6 +77,10 @@ h3 {
 	line-height: 1.8;
 }
 
+.returnButton {
+	text-align: center;
+}
+
 label {
 	font-size: 40px;
 	color: darkgreen;
