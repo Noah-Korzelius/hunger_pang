@@ -79,6 +79,9 @@ h3 {
 
 .returnButton {
 	text-align: center;
+	background-color: darkgreen;
+	padding-top: 7px;
+	padding-bottom: 7px;
 }
 
 label {
