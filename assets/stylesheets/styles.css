@@ -21,6 +21,14 @@
 	padding-bottom: 20px;
 }
 
+.theReviews {
+	text-align: center;
+	color: darkgreen;
+	font-family: cursive;
+	font-size: 20px;
+	padding-top: 15px;
+}
+
 .header{
 	color: gold;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
