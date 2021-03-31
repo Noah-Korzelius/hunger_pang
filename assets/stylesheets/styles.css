@@ -96,6 +96,6 @@ tr {
 	color: darkgreen;
 }
 
-/*table, th, td{
-	border: 1px darkgreen
-}*/
+td {
+text-align: center;
+}
