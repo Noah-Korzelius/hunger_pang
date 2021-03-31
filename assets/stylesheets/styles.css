@@ -70,9 +70,11 @@ h3 {
 
 .fluffText {
 	margin-left: 23%;
+	margin-right: 23%;
 	color: darkgreen;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 20px;
+	font-size: 25px;
+	line-height: 1.8;
 }
 
 label {
