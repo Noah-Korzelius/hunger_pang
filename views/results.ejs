@@ -11,9 +11,11 @@
     />
   </head>
   <body>
+    <!-- render the header from a shared view file -->
     <%- include('partials/header.ejs'); %>
     <main>
       <h2><p>Results Page</p></h2>
+      <!-- re-render the search bars on the results page -->
       <div class="searchResults">
         <form action="/results">
           <label for="zipCode">Zip Code:</label>
@@ -26,6 +28,7 @@
           </div>
         </form>
       </div>
+      <!-- create a table with the results from results.js -->
       <table style="width: 100%">
         <tr>
           <th>Restaurant</th>
@@ -34,6 +37,7 @@
           <th>Website</th>
           <th>Navigation</th>
         </tr>
+        <!-- results.js will pass in data here -->
         <% for(var x=0; x< len; x++){ %>
         <tr>
           <td><%= allRestaurants[x].restaurant_name %></td>
@@ -46,6 +50,7 @@
       </table>
       <p id="results"></p>
     </main>
+    <!-- render the footer from a shared view file -->
     <%- include('partials/footer.ejs'); %>
   </body>
 </html>

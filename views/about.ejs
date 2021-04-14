@@ -11,8 +11,10 @@
     />
   </head>
   <body>
+    <!-- render the header from a shared view file -->
     <%- include('partials/header.ejs'); %>
     <main>
+    <!-- write up the about us -->
     <h3><p>Hunger Pang is your Restaurant Database & Navigator!</p></h3>
     <div class="fluffText"><p>Have you ever wanted to eat something specific, but also wanted to try a new place?
         Or maybe you just want something specific, but don't know what place would make such a dish?
@@ -28,12 +30,14 @@
             When grading, the Hunger Pang devs recommend being lenient. They promise to pay it forward someday.
         </p>
     </div>
+    <!-- create the return to home button -->
     <div class="returnButton">
         <form action="/">
             <input type="submit" value="Return to Search" />
         </form>
     </div>
     </main>
+    <!-- render the footer from a shared view file -->
     <%- include('partials/footer.ejs'); %>
   </body>
 </html>
