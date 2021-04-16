@@ -84,6 +84,13 @@ h3 {
 	padding-bottom: 7px;
 }
 
+.navTestButton {
+	text-align: center;
+	background-color: darkgreen;
+	padding-top: 7px;
+	padding-bottom: 7px;
+}
+
 label {
 	font-size: 40px;
 	color: darkgreen;
