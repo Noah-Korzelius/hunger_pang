@@ -28,13 +28,30 @@
     <script>
       var map;
       function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        const directionsService = new google.maps.DirectionsService();
+        const directionsRenderer = new google.maps.DirectionsRenderer();
+        const map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.227, lng: -80.843},
           zoom: 11
         });
+        directionsRenderer.setMap(map);        
+        directionsService.route(
+          {
+            origin: "492 Willow Cove, Clover, SC",
+            destination: "Charlotte, NC",
+            travelMode: google.maps.TravelMode.DRIVING,
+          },
+          (response, status) => {
+            if (status === "OK") {
+              directionsRenderer.setDirections(response);
+            } else {
+              window.alert("Directions request failed due to " + status);
+            }
+          }
+        );
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap&libraries=&v=weekly"
     async defer></script>
     <%- include('partials/footer.ejs'); %>
   </body>
