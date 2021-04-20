@@ -43,7 +43,7 @@
           <td><%= allRestaurants[x].restaurant_name %></td>
           <td><%= allRestaurants[x].price_range %></td>
           <td><%= allRestaurants[x].restaurant_phone %></td>
-          <td><%= allRestaurants[x].restaurant_website %></td>
+          <td><a href=<%= allRestaurants[x].restaurant_website %>><%= allRestaurants[x].restaurant_website %></a></td>
           <td></td>
         </tr>
         <% } %>
