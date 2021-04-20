@@ -12,40 +12,55 @@
   </head>
   <body>
     <main>
-	<h1><p>Hunger Pang</p></h1>
-	  <form action="/results">
-    <!-- set up the search bars -->
-      <div class="addressBar">
-        <label for="Street Address">Street Address:</label>
-        <input type="text" id="streetAdress" name="streetAdress" /> <br /> <br />
+      <h1><p>Hunger Pang</p></h1>
+      <form action="/results">
+        <!-- set up the search bars -->
+        <div class="addressBar">
+          <label for="Street Address">Street Address:</label>
+          <input type="text" id="streetAdress" name="streetAdress" /> <br />
+          <br />
+        </div>
+
+        <div class="zipBar">
+          <label for="zipCode">Zip Code:</label>
+          <input type="text" id="zipCode" name="zipCode" /> <br />
+          <br />
+        </div>
+
+        <div class="foodBar">
+          <label for="searchTag">Food:</label>
+          <input type="text" id="searchTag" name="searchTag" /><br /><br />
+        </div>
+
+        <div class="dabutton">
+          <input type="submit" value="Food Search" />
+        </div>
+      </form>
+
+      <!-- write up some reviews -->
+      <div class="theReviews">
+        <p>
+          "Hunger Pang has changed my dining life. A must try for all people who
+          eat food." - Don Cheadle
+        </p>
+        <p>
+          "Hunger Pang is a supremely useful website that truly has a little
+          something for everyone. 10/10." - IGN
+        </p>
+        <p>
+          "Hunger Pang has a very particular set of skills that can help you
+          find the perfect restaurant." - Liam Neeson
+        </p>
+        <p>
+          "Look, if you're not going to use it, why are you here?" - Hunger Pang
+          Devs
+        </p>
+        <p>"I would like to buy this website for $10 Billion." - Bill Gates</p>
+        <p>
+          "After all this time, I have finally found the Lamb Sauce" - Gordon
+          Ramsay
+        </p>
       </div>
-
-      <div class="zipBar">
-        <label for="zipCode">Zip Code:</label>
-        <input type="text" id="zipCode" name="zipCode" /> <br /> <br />
-      </div>
-
-      <div class="foodBar">
-        <label for="searchTag">Food:</label>
-        <input type="text" id="searchTag" name="searchTag" /><br /><br />
-      </div>
-
-      <div class="dabutton">
-        <input type="submit" value="Food Search" />
-      </div>
-
-    </form>
-
-    <!-- write up some reviews -->
-    <div class="theReviews">
-    <p>"Hunger Pang has changed my dining life. A must try for all people who eat food." - Don Cheadle</p>
-    <p>"Hunger Pang is a supremely useful website that truly has a little something for everyone. 10/10." - IGN</p>
-    <p>"Hunger Pang has a very particular set of skills that can help you find the perfect restaurant." - Liam Neeson</p>
-    <p>"Look, if you're not going to use it, why are you here?" - Hunger Pang Devs</p>
-    <p>"I would like to buy this website for $10 Billion." - Bill Gates</p>
-    <p>"After all this time, I have finally found the Lamb Sauce" - Gordon Ramsay</p>
-    </div>
-
     </main>
     <!-- render the footer from a shared view file -->
     <%- include('partials/footer.ejs'); %>

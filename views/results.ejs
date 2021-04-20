@@ -17,6 +17,7 @@
       <h2><p>Results Page</p></h2>
       <!-- re-render the search bars on the results page -->
       <div class="searchResults">
+        <p id="uAddres">Your location is: <%= address %></p>
         <form action="/results">
           <label for="zipCode">Zip Code:</label>
           <input type="text" id="zipCode" name="zipCode" /> <br />
@@ -29,136 +30,148 @@
         </form>
       </div>
       <!-- create a table with the results from results.js -->
-      <table id="myTable" style="width: 100%; border-collapse: collapse; border: 1px solid black">
+      <table
+        id="myTable"
+        style="width: 100%; border-collapse: collapse; border: 1px solid black"
+      >
         <tr>
-          <th class ="sortButtons" onclick="sortTable(0)">Restaurant</th>
-          <th class ="sortButtons" onclick="sortTable(1)">Price</th>
+          <th class="sortButtons" onclick="sortTable(0)">Restaurant</th>
+          <th class="sortButtons" onclick="sortTable(1)">Price</th>
           <th>Phone Number</th>
           <th>Website</th>
+          <th>Hits</th>
           <th>Navigation</th>
         </tr>
         <!-- results.js will pass in data here -->
         <% for(var x=0; x< len; x++){ %>
         <tr>
-          <td><%= allRestaurants[x].restaurant_name %></td>
-          <td><%= allRestaurants[x].price_range %></td>
-          <td><%= allRestaurants[x].restaurant_phone %></td>
-          <td><a href=<%= allRestaurants[x].restaurant_website %>><%= allRestaurants[x].restaurant_website %></a></td>
-          <td></td>
+          <td><%= allRestaurants[x].name %></td>
+          <td><%= allRestaurants[x].price %></td>
+          <td><%= allRestaurants[x].phone %></td>
+          <td><%= allRestaurants[x].website %></td>
+          <td><%= allRestaurants[x].hits %></td>
+          <td><%= allRestaurants[x].address %></td>
         </tr>
         <% } %>
       </table>
       <p id="results"></p>
 
       <script>
-      function sortTable(n) {
-        var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
-        table = document.getElementById("myTable");
-        switching = true;
-        // Set the sorting direction to ascending:
-        dir = "asc";
-        /* Make a loop that will continue until
+        function sortTable(n) {
+          var table,
+            rows,
+            switching,
+            i,
+            x,
+            y,
+            shouldSwitch,
+            dir,
+            switchcount = 0;
+          table = document.getElementById("myTable");
+          switching = true;
+          // Set the sorting direction to ascending:
+          dir = "asc";
+          /* Make a loop that will continue until
         no switching has been done: */
-        while (switching) {
-          // Start by saying: no switching is done:
-          switching = false;
-          rows = table.rows;
-          /* Loop through all table rows (except the
+          while (switching) {
+            // Start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /* Loop through all table rows (except the
           first, which contains table headers): */
-          for (i = 1; i < (rows.length - 1); i++) {
-            // Start by saying there should be no switching:
-            shouldSwitch = false;
-            /* Get the two elements you want to compare,
+            for (i = 1; i < rows.length - 1; i++) {
+              // Start by saying there should be no switching:
+              shouldSwitch = false;
+              /* Get the two elements you want to compare,
             one from current row and one from the next: */
-            x = rows[i].getElementsByTagName("TD")[n];
-            y = rows[i + 1].getElementsByTagName("TD")[n];
-            /* Check if the two rows should switch place,
+              x = rows[i].getElementsByTagName("TD")[n];
+              y = rows[i + 1].getElementsByTagName("TD")[n];
+              /* Check if the two rows should switch place,
             based on the direction, asc or desc: */
-            if (dir == "asc") {
-              //check if the column being searched is 1
-              if (n == 1) {
-                if (x.innerHTML.toLowerCase() == "$$$") {
-                  x = 3;
-                } else if (x.innerHTML.toLowerCase() == "$$") {
-                  x = 2;
-                } else if (x.innerHTML.toLowerCase() == "$") {
-                  x = 1;
+              if (dir == "asc") {
+                //check if the column being searched is 1
+                if (n == 1) {
+                  if (x.innerHTML.toLowerCase() == "$$$") {
+                    x = 3;
+                  } else if (x.innerHTML.toLowerCase() == "$$") {
+                    x = 2;
+                  } else if (x.innerHTML.toLowerCase() == "$") {
+                    x = 1;
+                  } else {
+                    x = 4;
+                  }
+                  if (y.innerHTML.toLowerCase() == "$$$") {
+                    y = 3;
+                  } else if (y.innerHTML.toLowerCase() == "$$") {
+                    y = 2;
+                  } else if (y.innerHTML.toLowerCase() == "$") {
+                    y = 1;
+                  } else {
+                    y = 4;
+                  }
+                  if (x > y) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
                 } else {
-                  x = 4;
+                  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
                 }
-                if (y.innerHTML.toLowerCase() == "$$$") {
-                  y = 3;
-                } else if (y.innerHTML.toLowerCase() == "$$") {
-                  y = 2;
-                } else if (y.innerHTML.toLowerCase() == "$") {
-                  y = 1;
+              } else if (dir == "desc") {
+                if (n == 1) {
+                  if (x.innerHTML.toLowerCase() == "$$$") {
+                    x = 3;
+                  } else if (x.innerHTML.toLowerCase() == "$$") {
+                    x = 2;
+                  } else if (x.innerHTML.toLowerCase() == "$") {
+                    x = 1;
+                  } else {
+                    x = 0;
+                  }
+                  if (y.innerHTML.toLowerCase() == "$$$") {
+                    y = 3;
+                  } else if (y.innerHTML.toLowerCase() == "$$") {
+                    y = 2;
+                  } else if (y.innerHTML.toLowerCase() == "$") {
+                    y = 1;
+                  } else {
+                    y = 0;
+                  }
+                  if (x < y) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
                 } else {
-                  y = 4;
-                }
-                if (x > y) {
-                  // If so, mark as a switch and break the loop:
-                  shouldSwitch = true;
-                  break;
-                }
-              } else {
-                if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-                  // If so, mark as a switch and break the loop:
-                  shouldSwitch = true;
-                  break;
-                }
-              }
-            } else if (dir == "desc") {
-              if (n == 1) {
-                if (x.innerHTML.toLowerCase() == "$$$") {
-                  x = 3;
-                } else if (x.innerHTML.toLowerCase() == "$$") {
-                  x = 2;
-                } else if (x.innerHTML.toLowerCase() == "$") {
-                  x = 1;
-                } else {
-                  x = 0;
-                }
-                if (y.innerHTML.toLowerCase() == "$$$") {
-                  y = 3;
-                } else if (y.innerHTML.toLowerCase() == "$$") {
-                  y = 2;
-                } else if (y.innerHTML.toLowerCase() == "$") {
-                  y = 1;
-                } else {
-                  y = 0;
-                }
-                if (x < y) {
-                  // If so, mark as a switch and break the loop:
-                  shouldSwitch = true;
-                  break;
-                }
-              }
-              else {
-                if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
-                  // If so, mark as a switch and break the loop:
-                  shouldSwitch = true;
-                  break;
+                  if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
                 }
               }
             }
-          }
-          if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
+            if (shouldSwitch) {
+              /* If a switch has been marked, make the switch
             and mark that a switch has been done: */
-            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-            switching = true;
-            // Each time a switch is done, increase this count by 1:
-            switchcount ++;
-          } else {
-            /* If no switching has been done AND the direction is "asc",
-            set the direction to "desc" and run the while loop again. */
-            if (switchcount == 0 && dir == "asc") {
-              dir = "desc";
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
               switching = true;
+              // Each time a switch is done, increase this count by 1:
+              switchcount++;
+            } else {
+              /* If no switching has been done AND the direction is "asc",
+            set the direction to "desc" and run the while loop again. */
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
             }
           }
         }
-      }
       </script>
     </main>
     <!-- render the footer from a shared view file -->
