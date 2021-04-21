@@ -125,3 +125,7 @@ text-align: center;
 	font-size: 25px;
 	padding: 1%;
 }
+
+.sortButtons:hover {
+	background-color: gray;
+}
