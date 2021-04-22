@@ -32,7 +32,6 @@ router.get("/", function (req, res) {
 
       var eRestaurants = [];
       var numHits = 0;
-      var nameInTitle = false;
       //loop through all of the restaurants in a zip
       for (var x = 0; x < restaurants.length; x++) {
         //loop through all of the menus for a specific restaurant
@@ -48,7 +47,7 @@ router.get("/", function (req, res) {
                 .toLowerCase()
                 .includes(req.query.searchTag.toLowerCase())
             ) {
-              nameInTitle = true;
+              numHits += 10;
               break;
             }
             //loop through all of the items
@@ -71,7 +70,7 @@ router.get("/", function (req, res) {
         //code here
         //console.log(numHits);
         //if there are hits or the search is the name of the restaurant, create an object of it
-        if (numHits > 0 || nameInTitle) {
+        if (numHits > 0) {
           eRestaurants.push(
             new restaurant(
               restaurants[x].restaurant_name,
@@ -84,7 +83,6 @@ router.get("/", function (req, res) {
           );
           //reset checks for next restaurant
           numHits = 0;
-          nameInTitle = false;
         }
       }
 
