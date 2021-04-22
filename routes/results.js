@@ -16,7 +16,7 @@ const defaultParams = {
 router.get("/", function (req, res) {
   //creates variable storing users address
   const userAddress = req.query.streetAdress;
-
+  
   //reads all the data that is within a zip code provided by a user
   documenu.Restaurants.getByZipCode(req.query.zipCode, defaultParams).then(
     (result) => {
@@ -33,16 +33,8 @@ router.get("/", function (req, res) {
       var eRestaurants = [];
       var numHits = 0;
       var nameInTitle = false;
-
       //loop through all of the restaurants in a zip
       for (var x = 0; x < restaurants.length; x++) {
-        if (
-          restaurants[x].restaurant_name
-            .toLocaleLowerCase()
-            .includes(req.query.searchTag.toLocaleLowerCase())
-        ) {
-          nameInTitle = true;
-        }
         //loop through all of the menus for a specific restaurant
         for (var y = 0; y < restaurants[x].menus.length; y++) {
           //loop through all the sections on for a menu
@@ -50,7 +42,15 @@ router.get("/", function (req, res) {
             var i = 0;
             i < restaurants[x].menus[y].menu_sections.length;
             i++
-          ) {
+          ) { 
+            if (
+              restaurants[x].menus[y].menu_sections[i].section_name
+                .toLowerCase()
+                .includes(req.query.searchTag.toLowerCase())
+            ) {
+              nameInTitle = true;
+              break;
+            }
             //loop through all of the items
             for (
               var j = 0;
