@@ -14,7 +14,16 @@
     <meta charset="utf-8">
     <style>
       #map {
-        height: 60%;
+        height: 85%;
+        width: 70%;
+        float:left;
+      }
+      #directionsPanel{
+        height: 85%;
+        width: 30%;
+        float:right;
+        overflow: auto;
+        background-color: white;
       }
       html, body {
         height: 100%;
@@ -25,6 +34,7 @@
   </head>
   <body>
     <div id="map"></div>
+    <div id="directionsPanel"></div>
     <script>
     var map;
       function initMap() {
@@ -34,7 +44,8 @@
           center: {lat: 35.227, lng: -80.843},
           zoom: 11
         });
-        directionsRenderer.setMap(map);        
+        directionsRenderer.setMap(map);
+        directionsRenderer.setPanel(document.getElementById("directionsPanel")); 
         directionsService.route(
           {
             origin: sessionStorage.getItem("street address"),
@@ -52,10 +63,6 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap" async defer></script>
-    <div id="print"></div>
-    <script>
-      document.getElementById("print").innerHTML = sessionStorage.getItem("destination address")
-    </script>
     <%- include('partials/footer.ejs'); %>
   </body>
 </body>
