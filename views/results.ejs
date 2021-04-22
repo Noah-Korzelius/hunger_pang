@@ -50,7 +50,7 @@
           <td><%= allRestaurants[x].phone %></td>
           <td><%= allRestaurants[x].website %></td>
           <td><%= allRestaurants[x].hits %></td>
-          <td><%= allRestaurants[x].address %></td>
+          <td><button type="button" onclick="passAddresses('<%= allRestaurants[x].address %>')">Click Me!</button></td>
         </tr>
         <% } %>
       </table>
@@ -171,6 +171,12 @@
               }
             }
           }
+        }
+
+        function passAddresses(restaurantAddress) {
+          sessionStorage.setItem("street address", "<%=address%>");
+          sessionStorage.setItem("destination address", restaurantAddress);
+          window.location.href = "/navigation";
         }
       </script>
     </main>

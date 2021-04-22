@@ -26,7 +26,7 @@
   <body>
     <div id="map"></div>
     <script>
-      var map;
+    var map;
       function initMap() {
         const directionsService = new google.maps.DirectionsService();
         const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -37,8 +37,8 @@
         directionsRenderer.setMap(map);        
         directionsService.route(
           {
-            origin: "492 Willow Cove, Clover, SC",
-            destination: "Charlotte, NC",
+            origin: sessionStorage.getItem("street address"),
+            destination: sessionStorage.getItem("destination address"),
             travelMode: google.maps.TravelMode.DRIVING,
           },
           (response, status) => {
@@ -51,8 +51,11 @@
         );
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap&libraries=&v=weekly"
-    async defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap" async defer></script>
+    <div id="print"></div>
+    <script>
+      document.getElementById("print").innerHTML = sessionStorage.getItem("destination address")
+    </script>
     <%- include('partials/footer.ejs'); %>
   </body>
 </body>
