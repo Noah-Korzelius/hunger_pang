@@ -81,6 +81,17 @@ router.get("/", function (req, res) {
               restaurants[x].address.formatted
             )
           );
+
+          //check for null fields
+          if (eRestaurants[eRestaurants.length-1].price === ''){
+            eRestaurants[eRestaurants.length-1].price = 'NA';
+          }
+          if (eRestaurants[eRestaurants.length-1].phone === ''){
+            eRestaurants[eRestaurants.length-1].phone === '';
+          }
+          if (eRestaurants[eRestaurants.length-1].website === ''){
+            eRestaurants[eRestaurants.length-1].website = 'NA';
+          }
           //reset checks for next restaurant
           numHits = 0;
         }
