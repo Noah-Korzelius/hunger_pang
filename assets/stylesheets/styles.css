@@ -45,7 +45,8 @@
 }
 
 .header > a {
-  text-decoration: none;
+	color: gold;
+	text-decoration: none;
 }
 
 .footer {
