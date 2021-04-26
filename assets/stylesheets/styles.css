@@ -1,131 +1,135 @@
 .addressBar {
-	text-align: center;
-	padding-top: 50px;
+  text-align: center;
+  padding-top: 50px;
 }
 
 .zipBar {
-	text-align: center;
-	padding-top: 25px;
+  text-align: center;
+  padding-top: 25px;
 }
 
 .foodBar {
-	text-align: center;
-	padding-top: 25px;
-	padding-bottom: 50px;
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 50px;
 }
 
 .dabutton {
-	text-align: center;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	background-color: darkgreen;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: darkgreen;
 }
 
 .searchResults {
-	text-align: center;
-	padding-bottom: 20px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .theReviews {
-	text-align: center;
-	color: darkgreen;
-	font-family: cursive;
-	font-size: 20px;
-	padding-top: 15px;
+  text-align: center;
+  color: darkgreen;
+  font-family: cursive;
+  font-size: 20px;
+  padding-top: 15px;
 }
 
-.header{
-	color: gold;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 35px;
-	padding-left: 30px;
-	padding-top: 3px;
-	padding-bottom: 3px;
-	background-color: darkgreen;
+.header {
+  color: gold;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 35px;
+  padding-left: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: darkgreen;
 }
 
-.footer{
-	color: darkgreen;
-	text-align: center;
-	padding-top: 150px;
+.header > a {
+  text-decoration: none;
+}
+
+.footer {
+  color: darkgreen;
+  text-align: center;
+  padding-top: 150px;
 }
 
 h1 {
-	text-align: center;
-	font-size: 60px;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	padding-top: 100px;
+  text-align: center;
+  font-size: 60px;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding-top: 100px;
 }
 
 h2 {
-	text-align: center;
-	font-size: 60px;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  text-align: center;
+  font-size: 60px;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
-h3 { 
-	text-align: center;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 60px;
-	text-decoration: underline;
+h3 {
+  text-align: center;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 60px;
+  text-decoration: underline;
 }
 
 .fluffText {
-	margin-left: 20%;
-	margin-right: 20%;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 25px;
-	line-height: 1.8;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 25px;
+  line-height: 1.8;
 }
 
 .returnButton {
-	text-align: center;
-	background-color: darkgreen;
-	padding-top: 7px;
-	padding-bottom: 7px;
+  text-align: center;
+  background-color: darkgreen;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 .navTestButton {
-	text-align: center;
-	background-color: darkgreen;
-	padding-top: 7px;
-	padding-bottom: 7px;
+  text-align: center;
+  background-color: darkgreen;
+  padding-top: 7px;
+  padding-bottom: 7px;
 }
 
 label {
-	font-size: 40px;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	text-align: left;
+  font-size: 40px;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: left;
 }
 
 body {
-	background-color:gold;
+  background-color: gold;
 }
 
 tr {
-	color: darkgreen;
+  color: darkgreen;
 }
 
 td {
-border: 1px solid black;
-text-align: center;
+  border: 1px solid black;
+  text-align: center;
 }
 
-.profile{
-	display: inline-block; 
-	text-align:center; 
-	vertical-align:middle;
-	color: darkgreen;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	font-size: 25px;
-	padding: 1%;
+.profile {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  color: darkgreen;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 25px;
+  padding: 1%;
 }
 
 .sortButtons:hover {
-	background-color: gray;
+  background-color: gray;
 }

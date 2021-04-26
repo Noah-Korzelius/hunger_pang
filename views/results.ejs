@@ -16,20 +16,13 @@
     <main>
       <h2><p>Results Page</p></h2>
       <!-- re-render the search bars on the results page -->
-      <div class="searchResults">
-        <p id="uAddres">Your location is: <%= address %></p>
-        <form action="/results">
-          <label for="zipCode">Zip Code:</label>
-          <input type="text" id="zipCode" name="zipCode" /> <br />
-          <br />
-          <label for="searchTag">Food:</label>
-          <input type="text" id="searchTag" name="searchTag" /><br /><br />
-          <div class="dabutton">
-            <input type="submit" value="Food Search" />
-          </div>
+      <div class="dabutton">
+        <form action="/">
+          <input type="submit" value="Return to Search" />
         </form>
       </div>
       <!-- create a table with the results from results.js -->
+      <% if(allRestaurants.length !== 0) { %>
       <table
         id="myTable"
         style="width: 100%; border-collapse: collapse; border: 1px solid black"
@@ -39,7 +32,7 @@
           <th class="sortButtons" onclick="sortTable(1)">Price</th>
           <th>Phone Number</th>
           <th>Website</th>
-          <th class="sortButtons" onclick="sortTable(4)">Hits</th>
+          <th class="sortButtons" onclick="sortTable(4)">Relevance</th>
           <th>Navigation</th>
         </tr>
         <!-- results.js will pass in data here -->
@@ -50,12 +43,27 @@
           <td><%= allRestaurants[x].phone %></td>
           <td><%= allRestaurants[x].website %></td>
           <td><%= allRestaurants[x].hits %></td>
-          <td><button type="button" onclick="passAddresses('<%= allRestaurants[x].address %>')">Click Me!</button></td>
+          <td>
+            <button
+              type="button"
+              onclick="passAddresses('<%= allRestaurants[x].address %>')"
+            >
+              <%= allRestaurants[x].address %>
+            </button>
+          </td>
         </tr>
         <% } %>
       </table>
       <p id="results"></p>
-
+      <% } else { %>
+      <div>
+        <table>
+          <tr>
+            <th>No results available :'(</th>
+          </tr>
+        </table>
+      </div>
+      <% } %>
       <script>
         function sortTable(n) {
           var table,
