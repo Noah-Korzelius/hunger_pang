@@ -39,7 +39,7 @@
           <th class="sortButtons" onclick="sortTable(1)">Price</th>
           <th>Phone Number</th>
           <th>Website</th>
-          <th>Hits</th>
+          <th class="sortButtons" onclick="sortTable(4)">Hits</th>
           <th>Navigation</th>
         </tr>
         <!-- results.js will pass in data here -->
@@ -114,6 +114,12 @@
                     shouldSwitch = true;
                     break;
                   }
+                } else if (n == 4) {
+                  if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
                 } else {
                   if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
                     // If so, mark as a switch and break the loop:
@@ -142,6 +148,12 @@
                     y = 0;
                   }
                   if (x < y) {
+                    // If so, mark as a switch and break the loop:
+                    shouldSwitch = true;
+                    break;
+                  }
+                } else if (n == 4) {
+                  if (Number(x.innerHTML) < Number(y.innerHTML)) {
                     // If so, mark as a switch and break the loop:
                     shouldSwitch = true;
                     break;
