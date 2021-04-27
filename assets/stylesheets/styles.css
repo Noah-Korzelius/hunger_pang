@@ -39,8 +39,8 @@
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 35px;
   padding-left: 30px;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: darkgreen;
 }
 
@@ -90,8 +90,8 @@ h3 {
 .returnButton {
   text-align: center;
   background-color: darkgreen;
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .navTestButton {
