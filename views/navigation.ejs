@@ -1,25 +1,22 @@
-<!-- it do be existing -->
 <!DOCTYPE html>
-<body>
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="../assets/stylesheets/styles.css"
-  />
-<%- include('partials/header.ejs'); %>
 <html>
   <head>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
+    <link
+    rel="stylesheet"
+    type="text/css"
+    href="../assets/stylesheets/styles.css"
+  />
     <style>
       #map {
-        height: 85%;
+        height: 100%;
         width: 70%;
         float:left;
       }
       #directionsPanel{
-        height: 85%;
+        height: 100%;
         width: 30%;
         float:right;
         overflow: auto;
@@ -32,7 +29,8 @@
       }
     </style>
   </head>
-  <body>
+<body>
+    <%- include('partials/header.ejs'); %>
     <div id="map"></div>
     <div id="directionsPanel"></div>
     <script>
@@ -63,16 +61,11 @@
       }
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap" async defer></script>
-    <div id="print"></div>
-    <script>
-      document.getElementById("print").innerHTML = sessionStorage.getItem("destination address")
-    </script>
     <div class="returnButton">
-      <form action="/">
+      <form action="/" style="display: inline-block;">
           <input type="submit" value="Return to Search" />
       </form>
-  </div>
+    </div>
     <%- include('partials/footer.ejs'); %>
-  </body>
 </body>
 </html>
