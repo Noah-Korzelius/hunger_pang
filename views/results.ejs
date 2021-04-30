@@ -193,6 +193,7 @@
           }
         }
 
+        //fun little function to get the addresses into a form where they can be delivered to navigation.ejs, and also redirect user to navigation page
         function passAddresses(restaurantAddress) {
           sessionStorage.setItem("street address", "<%=address%>");
           sessionStorage.setItem("destination address", restaurantAddress);

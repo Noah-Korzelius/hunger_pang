@@ -9,6 +9,7 @@
     type="text/css"
     href="../assets/stylesheets/styles.css"
   />
+    <!--lazily apply style inline-->
     <style>
       #map {
         height: 70%;
@@ -28,6 +29,7 @@
         padding: 50;
       }
     </style>
+  
   </head>
 <body>
     <%- include('partials/header.ejs'); %>
@@ -35,6 +37,7 @@
     <div id="directionsPanel"></div>
     <script>
     var map;
+      // initMap() generates the map and renders the directions on the map.
       function initMap() {
         const directionsService = new google.maps.DirectionsService();
         const directionsRenderer = new google.maps.DirectionsRenderer();
@@ -46,6 +49,7 @@
         directionsRenderer.setPanel(document.getElementById("directionsPanel")); 
         directionsService.route(
           {
+            // We used session storage to pass in the origin & destination
             origin: sessionStorage.getItem("street address"),
             destination: sessionStorage.getItem("destination address"),
             travelMode: google.maps.TravelMode.DRIVING,
@@ -59,6 +63,7 @@
           }
         );
       }
+    // Script tag to call the Google Maps API. 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxr-EALQsVDsjYqu6cYeW7KJx4Iz-IF_Y&callback=initMap" async defer></script>
     <div class="returnButton">
